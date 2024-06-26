@@ -1,0 +1,14 @@
+---
+logging:
+  level: INFO
+  loggers:
+    ski.komoro.example: DEBUG
+    io.dropwizard.core: WARN
+    org.eclipse.jetty: WARN
+
+  appenders:
+    - type: console
+    - type: file
+      currentLogFilename: ./test-logs/example%d{yyyy-MM-dd-hh-mm}.log
+      archivedLogFilenamePattern: ./test-logs/example-%d{yyyy-MM-dd-hh}.log.gz
+      archivedFileCount: 5
